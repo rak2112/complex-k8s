@@ -1,4 +1,4 @@
-sudo: Required
+sudo: required
 services:
   - docker
 env:
@@ -20,8 +20,8 @@ before_install:
   script:
     - docker run -e CI=true rak2112/docker-react npm run test
 
-# deploy:
-#   provider: script
-#   script: bash ./deploy.sh
-#   on:
-#     branch: master
+deploy:
+  provider: script
+  script: bash ./deploy.sh
+  on:
+    branch: master
